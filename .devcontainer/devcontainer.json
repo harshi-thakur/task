@@ -1,0 +1,16 @@
+{
+  "name": "Bookmarks Debug Challenge",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": { "label": "app", "onAutoForward": "openBrowser" }
+  },
+  "postCreateCommand": "node scripts/setup-env.mjs && npm install && npm run db:init && npm run db:seed",
+  "customizations": {
+    "vscode": {
+      "extensions": ["dbaeumer.vscode-eslint", "bradlc.vscode-tailwindcss"]
+    }
+  }
+}

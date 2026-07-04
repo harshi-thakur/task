@@ -1,0 +1,20 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+
+export default function DeleteButton({ id }: { id: number }) {
+  const router = useRouter();
+
+  async function handleDelete() {
+    await fetch(`/api/bookmarks/${id}`, { method: "DELETE" });
+  }
+
+  return (
+    <button
+      onClick={handleDelete}
+      className="text-xs font-medium text-red-600 hover:text-red-800"
+    >
+      Delete
+    </button>
+  );
+}
