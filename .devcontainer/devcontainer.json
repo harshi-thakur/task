@@ -4,6 +4,9 @@
   "service": "app",
   "workspaceFolder": "/workspace",
   "forwardPorts": [3000],
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:4": {}
+  },
   "portsAttributes": {
     "3000": { "label": "app", "onAutoForward": "openBrowser" }
   },
