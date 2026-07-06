@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "scripts": {
     "setup": "node scripts/setup-env.mjs",
-    "dev": "next dev",
+    "dev": "next dev -H 0.0.0.0",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -H 0.0.0.0",
     "db:init": "tsx scripts/init-db.ts",
     "db:seed": "tsx scripts/seed.ts",
     "db:reset": "tsx scripts/init-db.ts && tsx scripts/seed.ts"
