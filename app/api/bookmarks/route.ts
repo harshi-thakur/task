@@ -5,9 +5,9 @@ export async function POST(req: Request) {
   const body = await req.json();
   const { userId, title, url, description } = body;
 
-  if (!title || !url) {
+  if (!title || !url||!userId) {
     return Response.json(
-      { error: "title and url are required" },
+      { error: "title ,userId and url are required" },
       { status: 400 }
     );
   }
