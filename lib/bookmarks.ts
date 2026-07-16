@@ -6,7 +6,7 @@ export const PAGE_SIZE = Number(process.env.PAGE_SIZE ?? 5);
 
 /** One page of a user's bookmarks, newest first. `page` is 1-based. */
 export async function getBookmarksPage(userId: string, page: number) {
-  const offset = page * PAGE_SIZE;
+  const offset = (page -1) * PAGE_SIZE;
 
   return db
     .select()
