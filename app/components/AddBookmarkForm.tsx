@@ -8,6 +8,7 @@ export default function AddBookmarkForm({ userId }: { userId: string }) {
   const [title, setTitle] = useState("");
   const [url, setUrl] = useState("");
   const [description, setDescription] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -21,6 +22,7 @@ export default function AddBookmarkForm({ userId }: { userId: string }) {
     setTitle("");
     setUrl("");
     setDescription("");
+    setSubmitting(false);
   }
 
   return (
@@ -58,6 +60,7 @@ export default function AddBookmarkForm({ userId }: { userId: string }) {
         />
       </div>
       <button
+        disabled = {submitting}
         type="submit"
         className="rounded bg-black px-3 py-1.5 text-sm font-medium text-white hover:bg-gray-800"
       >
