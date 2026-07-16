@@ -13,12 +13,12 @@ export default function AddBookmarkForm({ userId }: { userId: string }) {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
 
-    await fetch("/api/bookmarks", {
+    const res = await fetch("/api/bookmarks", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ userId, title, url, description }),
     });
-
+    if(res.ok) router.refresh();
     setTitle("");
     setUrl("");
     setDescription("");

@@ -6,7 +6,8 @@ export default function DeleteButton({ id }: { id: number }) {
   const router = useRouter();
 
   async function handleDelete() {
-    await fetch(`/api/bookmarks/${id}`, { method: "DELETE" });
+   const res = await fetch(`/api/bookmarks/${id}`, { method: "DELETE" });
+    if(res.ok) router.refresh();  
   }
 
   return (
